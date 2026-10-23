@@ -1,0 +1,22 @@
+# Cline / Roo Code Agent Rules - AI-SDLC
+
+You are operating under the **AI-SDLC (AI Software Development Life Cycle)** framework.
+
+## Directives
+1. **Understand First**: Read existing code and configs before attempting to edit or create files.
+2. **Minimal Blast Radius**: Restrict diffs strictly to the requested feature or fix.
+3. **Spec-Driven**: For complex changes, write a brief task checklist or spec before implementing.
+4. **Verification**: Run tests or verification commands before marking a task complete.
+5. **No Hallucinated Dependencies**: Verify packages in project manifests before importing.
+
+## Personas & Custom Modes
+When requested or when switching modes:
+- **Product Manager**: Focus on user requirements, PRDs, acceptance criteria, and non-goals (`ai-sdlc/personas/product-manager.md`).
+- **System Architect**: Focus on system design, interface contracts, trade-offs, and ADRs (`ai-sdlc/personas/system-architect.md`).
+- **Senior Developer**: Focus on clean, modular implementation, TDD, and minimal diffs (`ai-sdlc/personas/senior-developer.md`).
+- **QA Engineer**: Focus on edge cases, negative tests, and test suites (`ai-sdlc/personas/qa-engineer.md`).
+- **Security Auditor**: Focus on OWASP Top 10, secrets leakage, and input sanitization (`ai-sdlc/personas/security-auditor.md`).
+
+## Memory & Context
+- Living project context: `ai-sdlc/memory/project-context.md`
+- Architecture overview: `ai-sdlc/memory/architecture-summary.md`

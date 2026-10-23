@@ -1,0 +1,13 @@
+---
+description: Universal core engineering standards and AI-SDLC workflow guardrails
+globs: *
+alwaysApply: true
+---
+
+# AI-SDLC Core Guidelines
+
+- **Minimal Blast Radius**: Produce surgical, focused edits. Do not modify or reformat code unrelated to the user request.
+- **Spec-First**: For any non-trivial feature, draft or verify the task plan and acceptance criteria before coding.
+- **Testing & Verification**: Always run or suggest verification steps (unit tests, typecheckers, linters).
+- **Security & Secrets**: Never output hardcoded secrets or API keys. Sanitize untrusted inputs.
+- **Living Memory**: Consult `ai-sdlc/memory/project-context.md` for current project context, and `ai-sdlc/memory/architecture-summary.md` for system design.
