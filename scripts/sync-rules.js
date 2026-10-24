@@ -26,12 +26,23 @@ const EXPECTED_FILES = [
   path.join(AI_SDLC_DIR, 'templates', 'REVIEW_CHECKLIST.md'),
   path.join(AI_SDLC_DIR, 'memory', 'project-context.md'),
   path.join(AI_SDLC_DIR, 'memory', 'architecture-summary.md'),
+  path.join(ROOT_DIR, 'docs', 'README.md'),
+  path.join(ROOT_DIR, 'docs', 'prd', '.gitkeep'),
+  path.join(ROOT_DIR, 'docs', 'adr', '.gitkeep'),
+  path.join(ROOT_DIR, 'docs', 'specs', '.gitkeep'),
+  path.join(ROOT_DIR, 'docs', 'reviews', '.gitkeep'),
 ];
 
 const TOOL_CONFIGS = [
   path.join(ROOT_DIR, 'AGENTS.md'),
   path.join(ROOT_DIR, 'GEMINI.md'),
   path.join(ROOT_DIR, 'CLAUDE.md'),
+  path.join(ROOT_DIR, '.claude', 'settings.json'),
+  path.join(ROOT_DIR, '.claude', 'commands', 'pm.md'),
+  path.join(ROOT_DIR, '.claude', 'commands', 'architect.md'),
+  path.join(ROOT_DIR, '.claude', 'commands', 'dev.md'),
+  path.join(ROOT_DIR, '.claude', 'commands', 'qa.md'),
+  path.join(ROOT_DIR, '.claude', 'commands', 'security.md'),
   path.join(ROOT_DIR, '.cursorrules'),
   path.join(ROOT_DIR, '.cursor', 'rules', '000-ai-sdlc-core.mdc'),
   path.join(ROOT_DIR, '.cursor', 'rules', '100-persona-pm.mdc'),
@@ -40,10 +51,13 @@ const TOOL_CONFIGS = [
   path.join(ROOT_DIR, '.cursor', 'rules', '400-persona-qa.mdc'),
   path.join(ROOT_DIR, '.cursor', 'rules', '500-persona-security.mdc'),
   path.join(ROOT_DIR, '.github', 'copilot-instructions.md'),
+  path.join(ROOT_DIR, '.github', 'PULL_REQUEST_TEMPLATE.md'),
+  path.join(ROOT_DIR, '.github', 'workflows', 'ai-sdlc-lint.yml'),
   path.join(ROOT_DIR, '.windsurfrules'),
   path.join(ROOT_DIR, '.clinerules'),
   path.join(ROOT_DIR, '.roomodes'),
   path.join(ROOT_DIR, '.agents', 'rules', 'ai-sdlc.md'),
+  path.join(ROOT_DIR, '.agents', 'skills', 'ai-sdlc', 'SKILL.md'),
 ];
 
 function checkIntegrity() {
@@ -73,12 +87,13 @@ function sync() {
   }
 
   console.log('[SUCCESS] All AI-SDLC source documents and tool configs are present and synchronized:');
-  console.log('  ✓ Antigravity & Gemini: AGENTS.md, GEMINI.md, .agents/rules/ai-sdlc.md');
-  console.log('  ✓ Claude Code: CLAUDE.md, .claude/settings.json');
+  console.log('  ✓ Antigravity & Gemini: AGENTS.md, GEMINI.md, .agents/rules, .agents/skills/ai-sdlc');
+  console.log('  ✓ Claude Code: CLAUDE.md, .claude/settings.json, .claude/commands/*.md (5 slash commands)');
   console.log('  ✓ Cursor: .cursorrules, .cursor/rules/*.mdc (6 rules configured)');
-  console.log('  ✓ GitHub Copilot: .github/copilot-instructions.md');
+  console.log('  ✓ GitHub Copilot & CI: .github/copilot-instructions.md, PR template, CI workflow');
   console.log('  ✓ Windsurf: .windsurfrules');
   console.log('  ✓ Cline & Roo Code: .clinerules, .roomodes (5 custom roles configured)');
+  console.log('  ✓ Docs Scaffolding: docs/README.md, docs/{prd,adr,specs,reviews}/');
   console.log('  ✓ 5 Personas: PM, Architect, Dev, QA, Security Auditor');
 }
 

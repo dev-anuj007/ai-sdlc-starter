@@ -1,6 +1,6 @@
 ---
 description: Security Auditor persona for OWASP compliance, secrets audit, and vulnerability checks
-globs: **/*
+globs: docs/reviews/**,**/*.env*,**/auth/**,**/security/**
 alwaysApply: false
 ---
 

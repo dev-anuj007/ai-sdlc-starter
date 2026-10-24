@@ -7,4 +7,5 @@
   - Always write or update tests alongside feature changes.
   - Maintain Conventional Commits format for commit messages.
   - No untested assumptions. Run test commands if available.
-  - Respect existing patterns and minimize diff footprint.
+- **Skill Reference**: The `.agents/skills/ai-sdlc/SKILL.md` skill provides end-to-end guidance for the 5-phase lifecycle and quality gates.
+- **Living Memory**: Check `ai-sdlc/memory/project-context.md` for current project state and `ai-sdlc/memory/architecture-summary.md` for architecture details.

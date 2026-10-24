@@ -1,0 +1,23 @@
+name: AI-SDLC Quality Gate
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  verify-rules:
+    name: Verify AI-SDLC Integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run AI-SDLC Integrity Check
+        run: python scripts/sync-rules.py --check

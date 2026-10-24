@@ -28,12 +28,23 @@ EXPECTED_FILES = [
     AI_SDLC_DIR / "templates" / "REVIEW_CHECKLIST.md",
     AI_SDLC_DIR / "memory" / "project-context.md",
     AI_SDLC_DIR / "memory" / "architecture-summary.md",
+    ROOT_DIR / "docs" / "README.md",
+    ROOT_DIR / "docs" / "prd" / ".gitkeep",
+    ROOT_DIR / "docs" / "adr" / ".gitkeep",
+    ROOT_DIR / "docs" / "specs" / ".gitkeep",
+    ROOT_DIR / "docs" / "reviews" / ".gitkeep",
 ]
 
 TOOL_CONFIGS = [
     ROOT_DIR / "AGENTS.md",
     ROOT_DIR / "GEMINI.md",
     ROOT_DIR / "CLAUDE.md",
+    ROOT_DIR / ".claude" / "settings.json",
+    ROOT_DIR / ".claude" / "commands" / "pm.md",
+    ROOT_DIR / ".claude" / "commands" / "architect.md",
+    ROOT_DIR / ".claude" / "commands" / "dev.md",
+    ROOT_DIR / ".claude" / "commands" / "qa.md",
+    ROOT_DIR / ".claude" / "commands" / "security.md",
     ROOT_DIR / ".cursorrules",
     ROOT_DIR / ".cursor" / "rules" / "000-ai-sdlc-core.mdc",
     ROOT_DIR / ".cursor" / "rules" / "100-persona-pm.mdc",
@@ -42,10 +53,13 @@ TOOL_CONFIGS = [
     ROOT_DIR / ".cursor" / "rules" / "400-persona-qa.mdc",
     ROOT_DIR / ".cursor" / "rules" / "500-persona-security.mdc",
     ROOT_DIR / ".github" / "copilot-instructions.md",
+    ROOT_DIR / ".github" / "PULL_REQUEST_TEMPLATE.md",
+    ROOT_DIR / ".github" / "workflows" / "ai-sdlc-lint.yml",
     ROOT_DIR / ".windsurfrules",
     ROOT_DIR / ".clinerules",
     ROOT_DIR / ".roomodes",
     ROOT_DIR / ".agents" / "rules" / "ai-sdlc.md",
+    ROOT_DIR / ".agents" / "skills" / "ai-sdlc" / "SKILL.md",
 ]
 
 
@@ -75,12 +89,13 @@ def sync():
         sys.exit(1)
 
     print("[SUCCESS] All AI-SDLC source documents and tool configs are present and synchronized:")
-    print("  ✓ Antigravity & Gemini: AGENTS.md, GEMINI.md, .agents/rules/ai-sdlc.md")
-    print("  ✓ Claude Code: CLAUDE.md, .claude/settings.json")
+    print("  ✓ Antigravity & Gemini: AGENTS.md, GEMINI.md, .agents/rules, .agents/skills/ai-sdlc")
+    print("  ✓ Claude Code: CLAUDE.md, .claude/settings.json, .claude/commands/*.md (5 slash commands)")
     print("  ✓ Cursor: .cursorrules, .cursor/rules/*.mdc (6 rules configured)")
-    print("  ✓ GitHub Copilot: .github/copilot-instructions.md")
+    print("  ✓ GitHub Copilot & CI: .github/copilot-instructions.md, PR template, CI workflow")
     print("  ✓ Windsurf: .windsurfrules")
     print("  ✓ Cline & Roo Code: .clinerules, .roomodes (5 custom roles configured)")
+    print("  ✓ Docs Scaffolding: docs/README.md, docs/{prd,adr,specs,reviews}/")
     print("  ✓ 5 Personas: PM, Architect, Dev, QA, Security Auditor")
 
 

@@ -22,13 +22,16 @@ ai-sdlc/
     └── architecture-summary.md
 ```
 
-## How Rules Are Kept in Sync
-Whenever you update files in `ai-sdlc/`, run the sync script to automatically propagate changes to all AI tool configuration files (`.cursorrules`, `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `.windsurfrules`, `.clinerules`, `.roomodes`, etc.):
+## How Rule Integrity Is Verified
+Whenever you update files in `ai-sdlc/`, run the verification script to confirm that all AI tool configuration files (`.cursorrules`, `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `.windsurfrules`, `.clinerules`, `.roomodes`, etc.) are linked and verified:
 
 ```bash
 # Using Python (zero external dependencies)
-python scripts/sync-rules.py
+python scripts/sync-rules.py --check
 
 # Or using Node.js (zero external dependencies)
-node scripts/sync-rules.js
+node scripts/sync-rules.js --check
+
+# Or using PowerShell (zero external dependencies)
+powershell -ExecutionPolicy Bypass -File scripts/sync-rules.ps1 -Check
 ```
